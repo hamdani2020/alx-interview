@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" The module for pascal triangle """
+"""The module for pascal triangle
+"""
 
 
 def pascal_triangle(n):
@@ -10,7 +11,6 @@ def pascal_triangle(n):
         return []
 
     triangle = []
-
     for i in range(n):
         row = [1]
         if triangle:
