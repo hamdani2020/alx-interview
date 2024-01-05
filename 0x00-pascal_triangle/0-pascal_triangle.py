@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ The module for pascal triangle """
 
+
 def pascal_triangle(n):
     """This creates a list the stores the binaries for the 
     pascal triangle
