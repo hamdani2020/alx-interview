@@ -11,7 +11,8 @@ This is a script that reads ``stdin`` line by line and computes metrics:
         - format: ``<status code>: <number>``
         - status code should be printed in ascending order
 **Warning**: In this sample, you have random value - it's normal to not have the same output as this one.
-``alexa@ubuntu:~/0x03-log_parsing$ cat 0-generator.py
+```
+alexa@ubuntu:~/0x03-log_parsing$ cat 0-generator.py
 #!/usr/bin/python3
 import random
 import sys
@@ -71,4 +72,5 @@ Traceback (most recent call last):
 KeyboardInterrupt
     sleep(random.random())
 KeyboardInterrupt
-alexa@ubuntu:~/0x03-log_parsing$``
+alexa@ubuntu:~/0x03-log_parsing$
+```
