@@ -3,13 +3,14 @@
 Module for UTF8 Validation
 """
 
+
 def validUTF8(data):
     """ It determines with the given numbers are valid UTF-8 encoding
     """
     n_bytes = 0
 
     mask1 = 1 << 7
-    mask2 = 1<< 6
+    mask2 = 1 << 6
 
     for i in data:
         mask_bytes = 1 << 7
