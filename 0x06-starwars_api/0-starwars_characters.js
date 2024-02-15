@@ -1,26 +1,17 @@
 #!/usr/bin/node
 
-const request = require('request');
-const API_URL = 'https://swapi-api.hbtn.io/api';
+const request = require('request')
 
-if (process.argb.length > 2) {
-  request(`${API_URL}/films/${process.argv[2]}/`, (err, _, body) => {
-    if (err) {
-      console.log(err);
-    }
-    const charactersURL = JSON.parse(body).characters;
-    const charactersName = charactersURL.map(
-      url => new Promise((resolve, reject) => {
-	request(url, (promiseErr, __, charactersReqBody) => {
-	  if (promiseErr) {
-	    reject(promiseErr);
-	  }
-	  resolve(JSON.parse(characterReqBody).name);
-        });
-      }));
+request('https://swapi-api.hbtn.io/api/fils/' + process.argv[2], function(err, res, body) {
+  if (err) throw err;
+	const characterNames = JSON.parse(body).character;
+	exactOrder(characterNames, 0);
+});
 
-    Promise.all(charactersName)
-      .then(names => console.log(names.join('\n')))
-      .catch(allErr => console.log(allErr));
+const exactOrder = (characterNames, x) => {
+  if (x === characterNames.length) return;
+  request(actors[x], function (err, res, body) {
+    if (err) throw err;
+    console.log(JSON.parse(body).name);
+    exactOrder(characterNames, x + 1);
   });
-}
