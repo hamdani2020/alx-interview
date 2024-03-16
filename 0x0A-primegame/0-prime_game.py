@@ -6,20 +6,20 @@ def isWinner(x, nums):
     """x - rounds
     num - numbers list
     """
-    if x <= 0 or num is None:
+    if x <= 0 or nums is None:
         return None
-    if x != len(num):
+    if x != len(nums):
         return None
 
     ben = 0
     maria = 0
 
-    a = [1 for x in range(sorted(num)[-1] + 1)]
+    a = [1 for x in range(sorted(nums)[-1] + 1)]
     a[0], a[1] = 0, 0
     for i in range(2, len(a)):
         rm_multiples(a, i)
 
-    for i in num:
+    for i in nums:
         if sum(a[0:i + 1]) % 2 == 0:
             ben += 1
         else:
